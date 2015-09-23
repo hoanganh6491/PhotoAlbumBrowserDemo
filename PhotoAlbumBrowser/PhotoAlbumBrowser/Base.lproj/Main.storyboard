@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Usa-2i-8nh">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+    </dependencies>
+    <scenes>
+        <!--PhotoAlbum Browser-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PhotoAlbumBrowser" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="xoC-B0-Ke8" userLabel="Table View - List Order">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AllPhotosCellIdentifier" id="bOh-Lp-eaz">
+                                        <rect key="frame" x="0.0" y="114" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bOh-Lp-eaz" id="YRh-wQ-14Z">
+                                            <rect key="frame" x="0.0" y="0.0" width="567" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SmartAlbumCellIdentifier" id="hWO-VN-qon">
+                                        <rect key="frame" x="0.0" y="158" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hWO-VN-qon" id="gVj-6E-sXh">
+                                            <rect key="frame" x="0.0" y="0.0" width="567" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AlbumCellIdentifier" id="pNn-ES-52Q">
+                                        <rect key="frame" x="0.0" y="202" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pNn-ES-52Q" id="RMn-PQ-BiY">
+                                            <rect key="frame" x="0.0" y="0.0" width="567" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="yQj-ch-Sp5"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="TSS-GR-rbF"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="xoC-B0-Ke8" secondAttribute="trailing" id="GMm-qZ-cnU"/>
+                            <constraint firstItem="xoC-B0-Ke8" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-64" id="UkG-3E-3MG"/>
+                            <constraint firstItem="xoC-B0-Ke8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="lsP-ZA-nGL"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="xoC-B0-Ke8" secondAttribute="bottom" id="oNd-zA-8N5"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="PhotoAlbum Browser" id="aJc-zV-6Wg"/>
+                    <connections>
+                        <outlet property="tbvOrderList" destination="xoC-B0-Ke8" id="NCE-H3-1PB"/>
+                        <segue destination="0PS-Zw-zYL" kind="show" identifier="showAllPhoto" id="xSw-E2-wPb"/>
+                        <segue destination="0PS-Zw-zYL" kind="show" identifier="showByOrder" id="aFU-sV-GjI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1168" y="442"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="eCc-tt-ep5">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Usa-2i-8nh" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="XRO-LX-5Oe">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="usY-Ku-6vP"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W7i-Yn-dUO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="398" y="442"/>
+        </scene>
+        <!--List Media Viewcontroller View Controller-->
+        <scene sceneID="nAD-xl-cxy">
+            <objects>
+                <viewController id="0PS-Zw-zYL" customClass="ListMediaViewcontrollerViewController" customModule="PhotoAlbumBrowser" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="JFn-Cj-g6h"/>
+                        <viewControllerLayoutGuide type="bottom" id="IBM-LQ-U58"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="oVJ-ac-gKE">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="1mV-R2-sKG">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="1LO-5x-dA2">
+                                    <size key="itemSize" width="80" height="80"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MediaCollectionViewCell" id="0Kr-vW-lPu" customClass="MediaCollectionViewCell" customModule="PhotoAlbumBrowser" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="64" width="80" height="80"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4KU-HX-pv7">
+                                                    <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="4KU-HX-pv7" secondAttribute="trailing" id="293-Vz-0S6"/>
+                                            <constraint firstItem="4KU-HX-pv7" firstAttribute="leading" secondItem="0Kr-vW-lPu" secondAttribute="leading" id="NvN-L7-XiK"/>
+                                            <constraint firstAttribute="bottom" secondItem="4KU-HX-pv7" secondAttribute="bottom" id="iWP-8v-1pY"/>
+                                            <constraint firstItem="4KU-HX-pv7" firstAttribute="top" secondItem="0Kr-vW-lPu" secondAttribute="top" id="pcm-yv-9KN"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="imgvCellImage" destination="4KU-HX-pv7" id="UP3-UO-8BL"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="0PS-Zw-zYL" id="NoD-nF-roP"/>
+                                    <outlet property="delegate" destination="0PS-Zw-zYL" id="bNL-sc-YO7"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="1mV-R2-sKG" firstAttribute="top" secondItem="oVJ-ac-gKE" secondAttribute="top" id="9R7-Tm-cVJ"/>
+                            <constraint firstItem="IBM-LQ-U58" firstAttribute="top" secondItem="1mV-R2-sKG" secondAttribute="bottom" id="Bc9-6J-Rgn"/>
+                            <constraint firstAttribute="trailing" secondItem="1mV-R2-sKG" secondAttribute="trailing" id="J00-fH-AbL"/>
+                            <constraint firstItem="1mV-R2-sKG" firstAttribute="leading" secondItem="oVJ-ac-gKE" secondAttribute="leading" id="v5Y-jJ-95K"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="clvListMedia" destination="1mV-R2-sKG" id="9Wa-nG-pwA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QOV-dp-qWq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1976" y="442"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="xSw-E2-wPb"/>
+    </inferredMetricsTieBreakers>
+</document>
